@@ -25,17 +25,15 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.example.android.android_me.R;
-import com.example.android.android_me.data.AndroidImageAssets;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class BodyPartFragment extends Fragment {
 
-    private String TAG = "BodyPartFragment";
+    private static final String TAG = "BodyPartFragment";
 
     private List<Integer> mImageIds;
-    private int MListIndex;
+    private int mListIndex;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the fragment
@@ -55,10 +53,8 @@ public class BodyPartFragment extends Fragment {
         // Get a reference to the ImageView in the fragment layout
         ImageView imageView = (ImageView) rootView.findViewById(R.id.body_part_image_view);
 
-        // TODO (3) If a list of image ids exists, set the image resource to the correct item in that list
-        // Otherwise, create a Log statement that indicates that the list was not found
         if (mImageIds != null) {
-            imageView.setImageResource(mImageIds.get(MListIndex));
+            imageView.setImageResource(mImageIds.get(mListIndex));
         }
         else {
             Log.v(TAG, "List of the resources was not found");
@@ -72,7 +68,7 @@ public class BodyPartFragment extends Fragment {
         this.mImageIds = mImageIds;
     }
 
-    public void setMListIndex(int MListIndex) {
-        this.MListIndex = MListIndex;
+    public void setmListIndex(int mListIndex) {
+        this.mListIndex = mListIndex;
     }
 }
